@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>اختبار الإدارة | RTX Discord</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #1e1e2f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #2c2c3e;
+      padding: 30px;
+      border-radius: 10px;
+    }
+    input, textarea, button, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🛡️ اختبار الإدارة - سيرفر RTX</h2>
+
+    <div id="username-section">
+      <p>أدخل يوزرك في الديسكورد للمتابعة:</p>
+      <input type="text" id="username" placeholder="مثال: user#0001" required>
+      <button onclick="startQuiz()">ابدأ الاختبار</button>
+    </div>
+
+    <form id="quiz-section" class="hidden" onsubmit="submitQuiz(event)">
+      <div class="question">
+        <label>1. هل كلمة "زوط" تأخذ تحذير عليها؟</label><br>
+        <select name="q1" required>
+          <option value="">اختر الإجابة</option>
+          <option value="صح">صح</option>
+          <option value="خطأ">خطأ</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label>2. هل كلمة "قذفت" تأخذ تحذير على القذف؟</label><br>
+        <select name="q2" required>
+          <option value="">اختر الإجابة</option>
+          <option value="صح">صح</option>
+          <option value="خطأ">خطأ</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label>3. إذا نشرت سيرفر بخاص الأعضاء، هل تأخذ تايم يومين؟</label><br>
+        <select name="q3" required>
+          <option value="">اختر الإجابة</option>
+          <option value="صح">صح</option>
+          <option value="خطأ">خطأ</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label>4. (سؤال مقالي) هل ترى أن توقيع التايم مناسب في حالة النشر؟ اشرح وجهة نظرك:</label><br>
+        <textarea name="essay" placeholder="اكتب رأيك هنا..." rows="4" required></textarea>
+      </div>
+
+      <button type="submit">إرسال الإجابات</button>
+    </form>
+
+    <div id="result-section" class="hidden">
+      <h3>✅ تم إرسال إجاباتك بنجاح!</h3>
+      <p>سيتم مراجعة اختبارك من قبل الإدارة. شكرًا لك، <span id="final-username"></span>.</p>
+    </div>
+  </div>
+
+  <script>
+    function startQuiz() {
+      const username = document.getElementById("username").value.trim();
+      if (username === "") {
+        alert("يرجى كتابة اسم المستخدم.");
+        return;
+      }
+
+      document.getElementById("username-section").classList.add("hidden");
+      document.getElementById("quiz-section").classList.remove("hidden");
+      document.getElementById("final-username").textContent = username;
+    }
+
+    function submitQuiz(event) {
+      event.preventDefault();
+
+      // تقدر تضيف هنا كود يرسل البيانات لمكان معين مثل Webhook أو قاعدة بيانات
+
+      document.getElementById("quiz-section").classList.add("hidden");
+      document.getElementById("result-section").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
