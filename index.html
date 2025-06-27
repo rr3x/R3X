@@ -7,13 +7,28 @@
     body {
       background-color: black;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
+      user-select: none; /* يمنع تحديد النص */
+    }
+
+    .title {
+      font-size: 100px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      animation: colorChange 2s infinite alternate;
+    }
+
+    @keyframes colorChange {
+      0% { color: white; }
+      100% { color: black; }
     }
 
     .button {
+      margin-top: 50px;
       padding: 40px 80px;
       font-size: 72px;
       background-color: white;
@@ -29,8 +44,32 @@
       background-color: #dddddd;
     }
   </style>
+
+  <script>
+    // تعطيل كليك يمين
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // تعطيل اختصارات النسخ والتفتيش
+    document.addEventListener('keydown', function(e) {
+      if (
+        (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) || // Ctrl+C/U/S
+        (e.metaKey && e.key === 'c') || // Cmd+C للماك
+        (e.key === 'F12') ||
+        (e.ctrlKey && e.shiftKey && e.key === 'I') // Ctrl+Shift+I
+      ) {
+        e.preventDefault();
+      }
+    });
+
+    // تعطيل السحب أو التحديد
+    window.onload = () => {
+      document.body.onselectstart = () => false;
+      document.body.ondragstart = () => false;
+    };
+  </script>
 </head>
 <body>
+  <div class="title">261.stedio</div>
   <a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fdeltaios-executor.com%2FInstall1.plist">
     <button class="button">delta</button>
   </a>
