@@ -2,102 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome to Dashboard OLDR</title>
+  <title>hc261</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #0f0f0f;
-      color: #ffffff;
+      background-color: black;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
       margin: 0;
     }
 
-    h1 {
-      font-size: 60px;
-      margin-bottom: 60px;
-      color: #00ff99;
-      text-shadow: 0 0 10px #00ff99;
-    }
-
     .button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 25px 60px;
-      margin: 20px;
+      padding: 15px 30px;
+      font-size: 24px;
+      background-color: #ffffff;
+      color: black;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 32px;
-      transition: background-color 0.3s, transform 0.2s;
+      font-family: Arial, sans-serif;
     }
 
     .button:hover {
-      background-color: #45a049;
-      transform: scale(1.05);
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    #generatorMenu h2 {
-      font-size: 40px;
-      margin-bottom: 30px;
-      color: #00ccff;
-    }
-
-    #output {
-      margin-top: 30px;
-      font-size: 32px;
-      color: #ffcc00;
-      background-color: #222;
-      padding: 20px 40px;
-      border-radius: 10px;
-      word-break: break-word;
+      background-color: #e0e0e0;
     }
   </style>
 </head>
 <body>
-
-  <h1>Welcome to Dashboard OLDR</h1>
-  
-  <button class="button" onclick="showGenerator()">Generator</button>
-
-  <a href="https://discord.com/oauth2/authorize?client_id=1385251282528374784&scope=bot%20applications.commands&permissions=8">
-    <button class="button">Discord Bot</button>
+  <a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fdeltaios-executor.com%2FInstall1.plist">
+    <button class="button">delta</button>
   </a>
-
-  <div id="generatorMenu" class="hidden">
-    <h2>Roblox Account Generator</h2>
-    <button class="button" onclick="generateRoblox()">Generate Account</button>
-    <p id="output"></p>
-  </div>
-
-  <script>
-    function showGenerator() {
-      document.getElementById("generatorMenu").classList.remove("hidden");
-    }
-
-    function generateRoblox() {
-      const username = generateRandomString(8);
-      const password = generateRandomString(10);
-      const account = `${username}:${password}`;
-      document.getElementById("output").innerText = "Generated Account:\n" + account;
-    }
-
-    function generateRandomString(length) {
-      const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-      let result = '';
-      for (let i = 0; i < length; i++) {
-        result += chars.charAt(Math.floor(Math.random() * chars.length));
-      }
-      return result;
-    }
-  </script>
-
 </body>
 </html>
