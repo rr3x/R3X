@@ -1,77 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>261.stedio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>R3X HACKERS</title>
   <style>
     body {
       background-color: black;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
       margin: 0;
-      user-select: none; /* يمنع تحديد النص */
+      padding: 0;
     }
-
-    .title {
-      font-size: 100px;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      animation: colorChange 2s infinite alternate;
-    }
-
-    @keyframes colorChange {
-      0% { color: white; }
-      100% { color: black; }
-    }
-
-    .button {
+    h1 {
       margin-top: 50px;
-      padding: 40px 80px;
-      font-size: 72px;
-      background-color: white;
-      color: black;
-      border: none;
-      border-radius: 16px;
-      cursor: pointer;
-      font-family: Arial, sans-serif;
-      transition: background-color 0.3s;
     }
-
-    .button:hover {
-      background-color: #dddddd;
+    nav {
+      margin: 40px 0;
+    }
+    nav a {
+      display: block;
+      margin: 10px auto;
+      color: white;
+      background-color: gray;
+      padding: 15px 25px;
+      width: 200px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background-color: #666;
+    }
+    .btn {
+      margin-top: 50px;
+      background-color: gray;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      background-color: #666;
     }
   </style>
-
-  <script>
-    // تعطيل كليك يمين
-    document.addEventListener('contextmenu', event => event.preventDefault());
-
-    // تعطيل اختصارات النسخ والتفتيش
-    document.addEventListener('keydown', function(e) {
-      if (
-        (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) || // Ctrl+C/U/S
-        (e.metaKey && e.key === 'c') || // Cmd+C للماك
-        (e.key === 'F12') ||
-        (e.ctrlKey && e.shiftKey && e.key === 'I') // Ctrl+Shift+I
-      ) {
-        e.preventDefault();
-      }
-    });
-
-    // تعطيل السحب أو التحديد
-    window.onload = () => {
-      document.body.onselectstart = () => false;
-      document.body.ondragstart = () => false;
-    };
-  </script>
 </head>
 <body>
-  <div class="title">261.stedio</div>
-  <a href="itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fdeltaios-executor.com%2FInstall2.plist">
-    <button class="button">delta</button>
-  </a>
+
+  <h1>مرحبا بك في موقع R3X HACKERS</h1>
+
+  <nav>
+    <a href="#delta">- هاك دلتا</a>
+    <a href="#codex">- هاك كوديكس</a>
+    <a href="#krnl">- هاك كرننل</a>
+  </nav>
+
+  <section id="delta">
+    <a class="btn" href="itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fdeltaiosexecutor.com%2FInstall2.plist">دلتا</a>
+  </section>
+
+  <section id="codex">
+    <a class="btn" href="itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fcodex-ios.com%2FInstall.plist">كوديكس</a>
+  </section>
+
+  <section id="krnl">
+    <a class="btn" href="itms-services://?action=download-manifest&amp;url=https://krnl-ios.com/Install2.plist">كرنل</a>
+  </section>
+
 </body>
 </html>
