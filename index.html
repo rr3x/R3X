@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>R3X HACKERS</title>
   <style>
     body {
@@ -20,7 +20,7 @@
 
     h1 {
       margin: 0;
-      font-size: 26px;
+      font-size: 30px;
     }
 
     .menu-toggle {
@@ -45,7 +45,7 @@
       position: fixed;
       top: 60px;
       right: 10px;
-      width: 130px; /* <-- القائمة الجانبية صغّرناها فقط */
+      width: 160px;
       padding: 10px 0;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       z-index: 10;
@@ -54,8 +54,8 @@
 
     .menu a {
       display: block;
-      padding: 8px;
-      font-size: 13px;
+      padding: 10px;
+      font-size: 15px;
       color: white;
       text-decoration: none;
       background-color: #333;
@@ -73,17 +73,34 @@
     }
 
     .btn {
-      background-color: gray;
-      color: white;
-      padding: 15px 25px;
-      border: none;
-      border-radius: 8px;
-      font-size: 18px;
+      display: inline-block;
+      margin: 15px auto;
+      padding: 18px 30px;
+      font-size: 20px;
+      border-radius: 10px;
       text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
     }
 
-    .btn:hover {
-      background-color: #666;
+    .btn-delta {
+      background-color: black;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-delta:hover {
+      background-color: #222;
+    }
+
+    .btn-krnl {
+      background-color: purple;
+      color: black;
+      border: 2px solid black;
+    }
+
+    .btn-krnl:hover {
+      background-color: #9932cc;
     }
   </style>
 </head>
@@ -99,21 +116,18 @@
   </header>
 
   <div class="menu" id="menu">
-    <a href="#" onclick="showPage('delta')">هاك دلتا</a>
-    <a href="#" onclick="showPage('codex')">هاك كوديكس</a>
-    <a href="#" onclick="showPage('krnl')">هاك كرنل</a>
+    <a href="#" onclick="showPage('iphone')">هاكات آيفون</a>
+    <a href="#" onclick="showPage('android')">هاكات أندرويد</a>
   </div>
 
-  <div id="delta" class="page">
-    <a class="btn" href="itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fdeltaios-executor.com%2FInstall2.plist">دلتا</a>
+  <div id="iphone" class="page">
+    <a class="btn btn-delta" href="itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fdeltaios-executor.com%2FInstall21.plist">دلتا (iOS)</a><br>
+    <a class="btn btn-krnl" href="itms-services://?action=download-manifest&amp;url=https://krnl-ios.com/Install2.plist">كرنل (iOS)</a>
   </div>
 
-  <div id="codex" class="page">
-    <a class="btn" href="itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fcodex-ios.com%2FInstall.plist">كوديكس</a>
-  </div>
-
-  <div id="krnl" class="page">
-    <a class="btn" href="itms-services://?action=download-manifest&amp;url=https://krnl-ios.com/Install2.plist">كرنل</a>
+  <div id="android" class="page">
+    <a class="btn btn-delta" href="https://delta.webfiles.pro/file/Delta-2.679.762.apk">دلتا (Android)</a><br>
+    <a class="btn btn-krnl" href="https://krnl.webfiles.pro/file/krnl_release_2.681.805_2025.7.14_37.apk">كرنل (Android)</a>
   </div>
 
   <script>
