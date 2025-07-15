@@ -8,6 +8,8 @@
     * {
       box-sizing: border-box;
       user-select: none; /* منع تحديد النص */
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
     }
 
     body {
@@ -143,8 +145,25 @@
 
     <!-- محتوى هاكات آيفون -->
     <div id="iphone" class="page">
-      <a class="btn btn-delta" href="itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fdeltaios-executor.com%2FInstall21.plist">دلتا (iOS)</a>
-      <a class="btn btn-krnl" href="itms-services://?action=download-manifest&amp;url=https://krnl-ios.com/Install2.plist">كرنل (iOS)</a>
+      <a class="btn btn-delta"
+         href="itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fdeltaios-executor.com%2FInstall21.plist"
+         oncontextmenu="return false"
+         onmousedown="return false"
+         onselectstart="return false"
+         ondragstart="return false"
+         style="user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;">
+         دلتا (iOS)
+      </a>
+
+      <a class="btn btn-krnl"
+         href="itms-services://?action=download-manifest&amp;url=https://krnl-ios.com/Install2.plist"
+         oncontextmenu="return false"
+         onmousedown="return false"
+         onselectstart="return false"
+         ondragstart="return false"
+         style="user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;">
+         كرنل (iOS)
+      </a>
     </div>
 
     <!-- محتوى هاكات أندرويد -->
