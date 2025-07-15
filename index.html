@@ -7,6 +7,7 @@
   <style>
     * {
       box-sizing: border-box;
+      user-select: none; /* منع تحديد النص */
     }
 
     body {
@@ -122,7 +123,7 @@
     }
   </style>
 </head>
-<body>
+<body oncontextmenu="return false" oncopy="return false" oncut="return false" onpaste="return false">
 
   <div class="container">
     <h1>مرحبا بك في موقع R3X HACKERS</h1>
@@ -154,6 +155,13 @@
   </div>
 
   <script>
+    // منع الاختصارات مثل Ctrl+C و Ctrl+U
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 'x' || e.key === 'a')) || e.key === 'F12') {
+        e.preventDefault();
+      }
+    });
+
     function toggleMenu() {
       const menu = document.getElementById("menu");
       menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
